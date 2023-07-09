@@ -7,6 +7,8 @@ import { ProductsComponent } from 'src/products/products.component';
 import { FormsModule } from '@angular/forms';
 import { ClientComponent } from 'src/client/client.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SigninComponent } from 'src/signin/signin.component';
+
 
 
 
@@ -15,16 +17,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     ProductsComponent,
     ClientComponent,
+    SigninComponent
+
   ],
   imports: [
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-
-
     BrowserModule,
     AppRoutingModule,
-
 
   ],
   providers: [],

@@ -6,7 +6,7 @@ import axios from 'axios';
   providedIn: 'root'
 })
 export class ServiceService {
-  private url = 'http://192.168.124.39:8048/MOBILE/ODataV4/Company(\'LE%20MOTEUR%20SA\')/vehiculeDisponible';
+  private url = 'http://192.168.122.39:8048/MOBILE/ODataV4/Company(\'LE%20MOTEUR%20SA\')/vehiculeDisponible';
   private options = {
     username: 'Maher',
     password: 'Maher@25'
