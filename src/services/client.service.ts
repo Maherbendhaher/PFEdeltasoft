@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { client } from 'src/model/client';
-
+import * as moment from 'moment';
 
 
 @Injectable({
@@ -29,6 +29,8 @@ export class ClientService {
     password: 'Maher@25'
   };
   public sendData(client:client,produit:produit) {
+
+
     const url = 'http://192.168.122.39:8048/MOBILE/ODataV4/Company(\'LE%20MOTEUR%20SA\')/CONTACTDEVIS';
     const data = {
 
@@ -42,7 +44,8 @@ export class ClientService {
         Model_Code:produit.Model_Code,
         Serial_No:produit.Serial_No,
         VIN:produit.VIN,
-        Model_Version_No:produit.Model_Code
+        Model_Version_No:produit.Model_Code,
+        Date: moment().format('YYYY-MM-DD')
 
     };
 
