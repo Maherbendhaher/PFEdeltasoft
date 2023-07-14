@@ -9,48 +9,49 @@
   <div class="product-image">
     <div class="line1">
       <div class="image">
-        <<a
-          [routerLink]="['/products']"
-          [queryParams]="{ filter: 'ClasseA' }"
-          (click)="loadProducts2()"
-        >
+        <a (click)="loadProductsByModelCode('CLASSE A')">
           <img
             src="http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/Classe%20A/ClassA_d%C3%A9tour%C3%A9e_v6.png"
-            alt=" a"
+            alt="a"
           />
         </a>
-
-        <button class="name-product">Mercedes-Benz Classe A</button>
         <div *ngIf="products.length > 0">
-          <h3>Products Loaded from loadProducts2():</h3>
+          <h3>Products Loaded:</h3>
           <ul>
             <li *ngFor="let product of products">{{ product | json }}</li>
           </ul>
         </div>
+        <button class="name-product">Mercedes-Benz Classe A</button>
       </div>
-
       <div class="image">
-        <a href="" routerLink="/ClasseCLA">
+        <a (click)="loadProductsByModelCode('CLA')">
+          >
           <img
             src="http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/CLA/CLA.png"
             alt=" cla"
           />
         </a>
+        <div *ngIf="products.length > 0">
+          <h3>Products Loaded:</h3>
+          <ul>
+            <li *ngFor="let product of products">{{ product | json }}</li>
+          </ul>
+        </div>
         <p class="name-product">Mercedes-Benz Classe CLA</p>
       </div>
     </div>
     <div class="line2">
       <div class="image">
-        <!--<a href="" routerLink="/ClasseC"> </a>-->
+        <a (click)="loadProductsByModelCode('CLASSE C')">
           <img
             src="http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/Class%20C/C-Berline.png"
             alt="c"
           />
-
+        </a>
         <p class="name-product">Mercedes-Benz Classe C</p>
       </div>
       <div class="image">
-        <a href="" routerLink="/ClasseE">
+        <a (click)="loadProductsByModelCode('CLASSE E')">
           <img
             src="http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/Class%20E/Class-E.png"
             alt="e"
@@ -61,7 +62,7 @@
     </div>
     <div class="line3">
       <div class="image">
-        <a href="" routerLink="/ClasseGLB">
+        <a (click)="loadProductsByModelCode('GLB')">
           <img
             src="	https://cdn-ds.com/media/dfmodels/5390/w_458/h_343/MainImage-73066.png"
             alt="GLB"
@@ -70,7 +71,7 @@
         <p class="name-product">Mercedes-Benz GLB</p>
       </div>
       <div class="image">
-        <a href="" routerLink="/ClasseGLA">
+        <a (click)="loadProductsByModelCode('GLA')">
           <img
             src="	http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/GLA/GLA1.png"
             alt="GLA"

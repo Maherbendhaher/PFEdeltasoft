@@ -1,6 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { produit } from 'src/model/produit';
+import { ClientService } from 'src/services/client.service';
 import { ServiceService } from 'src/services/service.service';
+import { SharedService } from 'src/services/shared-service.service';
 
 
 
@@ -13,26 +16,29 @@ import { ServiceService } from 'src/services/service.service';
 
 export class HomeComponent {
   title = 'angular-projectPFE';
+  Queryparam:String=""
   products: any[] = [];
-  product:any="";
-  data:any="";
-  @ViewChild('imageContainer')
-  imageContainer!: ElementRef;
 
-  constructor(private serviceService: ServiceService, private Router:Router){
-
+  constructor(private serviceService: ServiceService, private router: Router,private sharedService: SharedService) {
 
   }
 
-  loadProducts2() {
-    this.serviceService.getProducts2()
+  loadProductsByModelCode(modelCode: string) {
+    this.serviceService.findByModelCode(modelCode)
       .then(products => {
         this.products = products;
-        this.Router.navigate(['/ClasseA']);
+       
+        this.Queryparam=products[0].Model_Code
+        console.log()
+        this.router.navigate(['/products'],{ queryParams: { filter: this.Queryparam } })
+
+
+
       })
       .catch(error => {
         console.error(error);
       });
   }
-
 }
+
+

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { produit } from 'src/model/produit';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +26,8 @@ export class ServiceService {
     Model_Version_No:""
 
   }
+  constructor() {}
+
   private getAuthorizationHeader() {
     const auth = {
       username: this.options.username,
@@ -34,55 +37,27 @@ export class ServiceService {
   }
 
 
-  getProducts() {
-    const headers = {
-      Authorization: this.getAuthorizationHeader()
-    };
 
-    return axios.get(this.url1+this.data, { headers })
-      .then(response => {
-        const products = response.data.value;
-        return products;
-      })
-      .catch(error => console.error(error));
-  }
 
-  getProducts2() {
+  getProducts(): Promise<any[]> {
     const headers = {
       Authorization: this.getAuthorizationHeader()
     };
 
     return axios.get(this.url1, { headers })
-      .then(response => {
-        const products = response.data.value;
-        const filteredProducts = products.filter((product: any) => product.Model_Code === 'CLASSE A');
-        return filteredProducts;
-      })
-      .catch(error => console.error(error));
+      .then(response => response.data.value)
+      .catch(error => {
+        console.error(error);
+        return []; // Return an empty array as a fallback value
+      });
   }
 
- getProducts3() {
-    const headers = {
-      Authorization: this.getAuthorizationHeader()
-    };
-
-    return axios.get(this.url1, { headers })
-      .then(response => {
-        const products = response.data.value;
-        const filteredProducts = products.filter((product: any) => product.Model_Code === 'CLASSE C');
-        return filteredProducts;
-      })
-      .catch(error => console.error(error));
+  findByModelCode(modelCode: string): Promise<any[]> {
+    return this.getProducts()
+      .then(products => products.filter(product => product.Model_Code === modelCode))
+      .catch(error => {
+        console.error(error);
+        return []; // Return an empty array as a fallback value
+      });
   }
-
-
-  findByModelCode(prod: produit,modelCode: string): void {
-    // Perform logic based on the model code received
-    console.log('Model Code:', modelCode);
-    // Perform specific actions or logic based on the model code
-    // ...
-  }
-
-
 }
-
