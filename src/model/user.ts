@@ -3,8 +3,9 @@ export class User {
   nom?: string;
   prenom?: string;
   numero?: string;
-  mail?: string;
+  email?: string;
   adrese?: string;
   gouvernorat?: string;
+
 
 }

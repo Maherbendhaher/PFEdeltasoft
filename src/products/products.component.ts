@@ -26,7 +26,6 @@ export class ProductsComponent {
           case 'CLA':
             this.products=this.loadProductsByModelCode("CLA");
             break;
-
           case 'CLASSE C':
             this.products=this.loadProductsByModelCode("CLASSE C");
             break;
