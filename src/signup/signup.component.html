@@ -1,6 +1,5 @@
-
 <div class="signup-content">
-  <div class="col-md-12 signup" >
+  <div class="col-md-12 signup">
     <div class="card card-container">
       <img
         style="width: 50px"
@@ -154,7 +153,9 @@
             #password="ngModel"
           />
           <div class="alert-danger" *ngIf="password.errors && f.submitted">
-            <div *ngIf="password.errors?.['required']">Password is required</div>
+            <div *ngIf="password.errors?.['required']">
+              Password is required
+            </div>
             <div *ngIf="password.errors?.['minlength']">
               Password must be at least 6 characters
             </div>

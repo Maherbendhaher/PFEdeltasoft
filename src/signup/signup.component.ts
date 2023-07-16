@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
-import { NavbarComponent } from 'src/navbar/navbar.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-signup',
