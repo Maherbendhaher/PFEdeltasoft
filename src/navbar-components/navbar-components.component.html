@@ -1,0 +1,52 @@
+<nav class="navbar">
+  <div class="logo-navbar">
+    <a routerLink="/home">
+      <img
+        src="http://www.lemoteur-sa.com/u_p_l_d/logo/1517563734_09427370015175637345a742f56e6291.png"
+        alt="logo"
+      />
+    </a>
+  </div>
+
+  <div class="">
+    <ul>
+      <li>
+        <a routerLink="/contact">Contact</a>
+      </li>
+      <li>
+        <a routerLink="/products">Products</a>
+      </li>
+      <li>
+        <a routerLink="/ListeDEmandeDevis">ListeDEmandeDevis</a>
+      </li>
+      <li>
+        <a routerLink="/ListeUsers">ListeUsers</a>
+      </li>
+
+      <li>
+        <a (click)="toggleProfileMenu()">
+          <i class="fas fa-user"></i>
+          <i class="fas fa-caret-down" *ngIf="showProfileMenu"></i>
+        </a>
+        <ul class="profile-submenu" *ngIf="showProfileMenu">
+          <li>
+            <a routerLink="/Profile">
+              <i class="fas fa-cog"></i>
+              profile
+            </a>
+          </li>
+          <li>
+            <a href="logout" routerLink="/signin"
+              ><i class="fas fa-sign-out-alt" (click)="logout()"></i>
+              Déconnexion</a
+            >
+          </li>
+        </ul>
+
+    </ul>
+  </div>
+  <div *ngIf="user" class="nom">
+    welcome {{user.nom}}
+  </div>
+</nav>
+<router-outlet></router-outlet>

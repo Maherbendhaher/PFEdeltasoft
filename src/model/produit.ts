@@ -6,7 +6,7 @@ export class produit{
     Serial_No:string
     VIN:string
     Model_Version_No:string
-  
+
 constructor(Location_Code:string,
     Make_Code:string,
     Model_Code:string,

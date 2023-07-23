@@ -1,29 +1,23 @@
 import { Injectable } from '@angular/core';
 import axios from 'axios';
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class ListeDemandeDevisService {
-  private url = 'http://192.168.81.39:8048/MOBILE/ODataV4/Company(\'LE%20MOTEUR%20SA\')/CONTACTDEVIS';
+export class ListeUserService {
+
+  private url = 'http://192.168.81.39:8048/Mobile/ODataV4/Company(\'LE%20MOTEUR%20SA\')/CreationContact';
   private options = {
     username: 'Maher',
     password: 'Maher@25'
   };
-  ListeDemande={
-    Email:"",
-    Nom:"",
-    Prenom:"",
-    NumeroTEL:"",
-    Ville:"",
-    Location_Code:"",
-    Make_Code:"",
-    Model_Code:"",
-    Serial_No:"",
-    VIN:"",
-    Model_Version_No:"",
-    Confirmation:""
+  ListeUser={
+  nom:"",
+  prenom:"",
+  numero:"",
+  email:"",
+  adresse:"",
+  gouvernorat:""
   }
   constructor() { }
   private getAuthorizationHeader() {
@@ -34,18 +28,17 @@ export class ListeDemandeDevisService {
     return `Basic ${btoa(`${auth.username}:${auth.password}`)}`;
   }
 
-  getListeDemande() {
+  getListeUser() {
     const headers = {
       Authorization: this.getAuthorizationHeader()
     };
 
     return axios.get(this.url, { headers })
       .then(response => {
-        const ListeDemande = response.data.value;
-        return ListeDemande;
+        const ListeUser = response.data.value;
+        return ListeUser;
       })
       .catch(error => console.error(error));
   }
-
 
 }

@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { User } from 'src/model/user';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceService } from 'src/services/service.service';
 import { TokenStorageService } from 'src/services/token-storage.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-navbar-components',
+  templateUrl: './navbar-components.component.html',
+  styleUrls: ['./navbar-components.component.css']
 })
-export class AppComponent {
-  title = 'angular-projectPFE';
+export class NavbarComponentsComponent  implements OnInit{
   showProfileMenu: boolean = false;
-  isLoggedIn: boolean = false;// Variable pour contrôler l'affichage de l'élément "Login"
+  isLoggedIn: boolean = false;
+  user: any | null;
+
+
+  ngOnInit(): void {
+    this.user=this.tokenStorageService.getUser()
+    console.log(this.user);
+  }
 
  constructor(private serviceService: ServiceService,
   private tokenStorageService: TokenStorageService,
@@ -20,9 +27,13 @@ export class AppComponent {
 
  }
 
+ name = this.tokenStorageService.saveUser
+
+
  toggleProfileMenu() {
   this.showProfileMenu = !this.showProfileMenu;
   this.showProfileMenu =true;
+  console.log(this.showProfileMenu);
 
 }
 logout(): void {
@@ -38,9 +49,4 @@ redirectToSignIn() {
   }
 }
 
-
-
 }
-
-
-

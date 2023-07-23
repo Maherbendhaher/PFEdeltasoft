@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
 import { TokenStorageService } from 'src/services/token-storage.service';
 
@@ -8,7 +9,7 @@ import { TokenStorageService } from 'src/services/token-storage.service';
   styleUrls: ['./signin.component.css'],
 
 })
-export class SigninComponent {
+export class SigninComponent implements OnInit {
   form: any = {
     email: null,
     password: null
@@ -26,13 +27,15 @@ export class SigninComponent {
 
   }
 
-  constructor( private authService: AuthService ,private tokenStorage: TokenStorageService){
+  constructor( private authService: AuthService ,private tokenStorage: TokenStorageService,
+    private router: Router){
+
 
   }
 
   onSubmit(): void {
     const { email, password } = this.form;
-    console.log('hachem');
+    console.log('');
 
     this.authService.login(email, password).subscribe(
       data => {
@@ -43,18 +46,23 @@ export class SigninComponent {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+        this.router.navigate(['home']);
+
+
       },
       err => {
         this.errorMessage = err.error.message;
         console.log(this.errorMessage)
         this.isLoginFailed = true;
+        alert('Échec de la connexion. Veuillez vérifier vos informations d\'identification.');
+
       }
     );
   }
   reloadPage(): void {
     window.location.reload();
   }
+
 
 
 }

@@ -31,7 +31,7 @@ export class ClientService {
   public sendData(client:client,produit:produit) {
 
 
-    const url = 'http://192.168.122.39:8048/MOBILE/ODataV4/Company(\'LE%20MOTEUR%20SA\')/CONTACTDEVIS';
+    const url = 'http://192.168.81.39:8048/MOBILE/ODataV4/Company(\'LE%20MOTEUR%20SA\')/CONTACTDEVIS';
     const data = {
 
         Nom:client.Nom,

@@ -1,3 +1,4 @@
+import { User } from 'src/model/user';
 import { Injectable } from '@angular/core';
 
 
@@ -8,6 +9,8 @@ const USER_KEY = 'auth-user';
   providedIn: 'root'
 })
 export class TokenStorageService {
+
+  
 
   constructor() { }
   signOut(): void {

@@ -13,6 +13,9 @@ import { HomeComponent } from 'src/home/home.component';
 import { SignupComponent } from 'src/signup/signup.component';
 import { NavbarComponent } from 'src/navbar/navbar.component';
 import { ListeDemandeDevisComponent } from 'src/liste-demande-devis/liste-demande-devis.component';
+import { ListeUserComponent } from 'src/liste-user/liste-user.component';
+import { ProfileComponent } from 'src/profile/profile.component';
+import { NavbarComponentsComponent } from 'src/navbar-components/navbar-components.component';
 
 
 
@@ -21,12 +24,16 @@ import { ListeDemandeDevisComponent } from 'src/liste-demande-devis/liste-demand
   declarations: [
     AppComponent,
     ProductsComponent,
+    NavbarComponentsComponent,
+
     ClientComponent,
     SigninComponent,
     HomeComponent,
     SignupComponent,
     NavbarComponent,
-    ListeDemandeDevisComponent
+    ListeDemandeDevisComponent,
+    ListeUserComponent,
+    ProfileComponent
 
   ],
   imports: [

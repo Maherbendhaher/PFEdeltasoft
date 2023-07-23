@@ -1,0 +1,25 @@
+<app-navbar-components></app-navbar-components>
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-7">
+      <div class="card p-3 py-4">
+        <div class="text-center">
+          <img
+            src="../assets/image/download.png"
+            width="100"
+            class="rounded-circle"
+          />
+        </div>
+
+        <div class="donne-content" *ngIf="user">
+          <h5 class="donne">Nom:{{ user.nom }}</h5>
+          <h5 class="donne">Prenom:{{ user.prenom }}</h5>
+          <h5 class="donne">Numero:{{ user.numero }}</h5>
+          <h5 class="donne">Email:{{ user.email }}</h5>
+          <h5 class="donne">Adresse:{{ user.adresse }}</h5>
+          <h5 class="donne">Gouvernorat:{{ user.gouvernorat }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

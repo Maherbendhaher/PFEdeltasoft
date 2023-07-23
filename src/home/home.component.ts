@@ -18,6 +18,7 @@ export class HomeComponent {
   title = 'angular-projectPFE';
   Queryparam:String=""
   products: any[] = [];
+  isLoggedIn= false;
 
   constructor(private serviceService: ServiceService, private router: Router,private sharedService: SharedService) {
 
@@ -27,7 +28,7 @@ export class HomeComponent {
     this.serviceService.findByModelCode(modelCode)
       .then(products => {
         this.products = products;
-       
+
         this.Queryparam=products[0].Model_Code
         console.log()
         this.router.navigate(['/products'],{ queryParams: { filter: this.Queryparam } })
@@ -39,6 +40,28 @@ export class HomeComponent {
         console.error(error);
       });
   }
+  login() {
+    // Ici, vous devrez vérifier les identifiants de l'utilisateur
+    // et définir la variable isLoggedIn en fonction du résultat.
+    // Pour cet exemple, nous allons simplement supposer que l'utilisateur est connecté avec succès.
+
+    // Simulation de la connexion réussie en définissant isLoggedIn sur true.
+    this.isLoggedIn = true;
+
+    // Après le succès de la connexion, redirigez l'utilisateur vers la page "CLASSE A"
+    this.router.navigate(['/CLASSE A']);
+  }
+  redirectToSignIn() {
+    if (!this.isLoggedIn) {
+      this.router.navigate(['signin']);
+      this.isLoggedIn = true;
+    }
 }
+
+
+
+}
+
+
 
 

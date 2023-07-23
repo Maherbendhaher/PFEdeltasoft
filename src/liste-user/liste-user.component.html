@@ -5,33 +5,28 @@
     <table class="fl-table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Email</th>
-          <th>Nom</th>
+          <th>id</th>
+          <th>nom</th>
+          <th>prenom</th>
           <!-- <th>Prenom</th>-->
-          <th>NumeroTEL</th>
+          <th>numero</th>
           <!-- <th>Ville</th>-->
-          <th>Make_Code</th>
-          <th>Model_Code</th>
-          <th>Model_Version_No</th>
-          <th>VIN</th>
-          <th>Location_Code</th>
-          <th>Serial_No</th>
-          <th>demande devis</th>
+          <th>email</th>
+          <th>adresse</th>
+          <th>gouvernorat</th>
+
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ListeDemande of ListeDemande; let i = index">
-          <td>{{ ListeDemande.ID }}</td>
-          <td>{{ ListeDemande.Email }}</td>
-          <td>{{ ListeDemande.Nom }}</td>
-          <td>{{ ListeDemande.NumeroTEL }}</td>
-          <td>{{ ListeDemande.Make_Code }}</td>
-          <td>{{ ListeDemande.Model_Code }}</td>
-          <td>{{ ListeDemande.Model_Version_No }}</td>
-          <td>{{ ListeDemande.VIN }}</td>
-          <td>{{ ListeDemande.Location_Code }}</td>
-          <td>{{ ListeDemande.Serial_No }}</td>
+        <tr *ngFor="let ListeUser of ListeUser; let i = index">
+          <td>{{ ListeUser.id }}</td>
+          <td>{{ ListeUser.nom }}</td>
+          <td>{{ ListeUser.prenom }}</td>
+          <td>{{ ListeUser.numero }}</td>
+          <td>{{ ListeUser.email }}</td>
+          <td>{{ ListeUser.adresse }}</td>
+          <td>{{ ListeUser.gouvernorat }}</td>
+
           <td>
             <!-- <button (click)="demandeDevis(product)">Demande devis</button>-->
           </td>

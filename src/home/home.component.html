@@ -1,3 +1,4 @@
+<app-navbar-components></app-navbar-components>
 <div class="home-container">
   <div class="slideview">
     <div class="logo-sideview"></div>
@@ -9,23 +10,29 @@
   <div class="product-image">
     <div class="line1">
       <div class="image">
-        <a (click)="loadProductsByModelCode('CLASSE A')">
-          <img
-            src="http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/Classe%20A/ClassA_d%C3%A9tour%C3%A9e_v6.png"
-            alt="a"
-          />
-        </a>
-        <div *ngIf="products.length > 0">
-          <h3>Products Loaded:</h3>
-          <ul>
-            <li *ngFor="let product of products">{{ product | json }}</li>
-          </ul>
-        </div>
-        <button class="name-product">Mercedes-Benz Classe A</button>
+
+          <a (click)="loadProductsByModelCode('CLASSE A')">
+            <img
+              src="http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/Classe%20A/ClassA_d%C3%A9tour%C3%A9e_v6.png"
+              alt="a"
+            />
+          </a>
+          <div *ngIf="products.length > 0">
+            <h3>Products Loaded:</h3>
+            <ul>
+              <li *ngFor="let product of products">{{ product | json }}</li>
+            </ul>
+          </div>
+
+
+
+
+
+          <button class="name-product">Mercedes-Benz Classe A</button>
+
       </div>
       <div class="image">
         <a (click)="loadProductsByModelCode('CLA')">
-          >
           <img
             src="http://www.lemoteur-sa.com/u_p_l_d/public/Mercedes/CLA/CLA.png"
             alt=" cla"
@@ -82,3 +89,4 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>

@@ -82,6 +82,13 @@ nav li:hover .profile-submenu {
   color: #fff;
   background-color: black;
 }
+.nom{
+  color: aqua;
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+
 
 .profile-submenu li {
   margin: 5px 0;
