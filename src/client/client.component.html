@@ -1,15 +1,22 @@
 <div class="m-8 ... client-Content">
-  <div class="flex m-8 ... justify-center mt-6 ...  form-content">
-    <div class="w-1/2   h-full forms">
+  <div class="flex m-8 ... justify-center mt-6 ... form-content">
+    <div class="w-1/2 h-full forms">
       <!-- Form content goes here -->
-      <form class="w-full max-w-sm" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+      <form
+        class="w-full max-w-sm"
+        #myForm="ngForm"
+        (ngSubmit)="onSubmit(myForm)"
+      >
         <div class="md:flex md:items-center mb-6">
           <div class="md:w-1/3">
-            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="Nom">
-                Nom
+            <label
+              class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+              for="Nom"
+            >
+              Nom
             </label>
           </div>
-         <!-- <div class="md:w-2/3">
+          <!-- <div class="md:w-2/3">
             <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="Nom" name="Nom" type="text" ngModel  required>
           </div>
         </div>
@@ -19,27 +26,47 @@
                 Prenom
               </label>
             </div>-->
-            <div class="md:w-2/3">
-              <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="Prenom" type="text"  ngModel    required>
-            </div>
-          </div>
-        <div class="md:flex md:items-center mb-6">
-          <div class="md:w-1/3">
-            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="Email">
-              Email
-            </label>
-          </div>
-         <div class="md:w-2/3">
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" name="Email" id="Email" type="email" placeholder="Email" ngModel   required>
+          <div class="md:w-2/3">
+            <input
+              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              name="Prenom"
+              type="text"
+              ngModel
+              required
+            />
           </div>
         </div>
         <div class="md:flex md:items-center mb-6">
           <div class="md:w-1/3">
-            <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="NumeroTEL">
+            <label
+              class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+              for="Email"
+            >
+              Email
+            </label>
+          </div>
+          <div class="md:w-2/3">
+            <input
+              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              name="Email"
+              id="Email"
+              type="email"
+              placeholder="Email"
+              ngModel
+              required
+            />
+          </div>
+        </div>
+        <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3">
+            <label
+              class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+              for="NumeroTEL"
+            >
               NumeroTEL
             </label>
           </div>
-         <!-- <div class="md:w-2/3">
+          <!-- <div class="md:w-2/3">
             <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="NumeroTEL" name="NumeroTEL" type="text" placeholder="NumeroTEL" ngModel >
           </div>
         </div>
@@ -50,24 +77,32 @@
             </label>
           </div>-->
           <div class="md:w-2/3">
-            <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="Ville" name="Ville" type="text" placeholder="Ville" ngModel >
+            <input
+              class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+              id="Ville"
+              name="Ville"
+              type="text"
+              placeholder="Ville"
+              ngModel
+            />
           </div>
         </div>
-
-
 
         <div class="md:flex md:items-center">
           <div class="md:w-1/3"></div>
           <div class="md:w-2/3">
-            <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none  font-bold py-2 px-4 rounded" type="submit">
-             submit
+            <button
+              class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
+              type="submit"
+            >
+              submit
             </button>
           </div>
         </div>
       </form>
     </div>
 
-    <div class="w-1/2  items-center">
+    <div class="w-1/2 items-center">
       <div class="product">
         <div class="title-Produit">produit</div>
 
