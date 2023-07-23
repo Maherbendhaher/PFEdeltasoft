@@ -45,6 +45,7 @@ export class ClientService {
         Serial_No:produit.Serial_No,
         VIN:produit.VIN,
         Model_Version_No:produit.Model_Code,
+        
         Date: moment().format('YYYY-MM-DD')
 
     };

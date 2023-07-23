@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddDevisComponent } from 'src/add-devis/add-devis.component';
 
 import { ClientComponent } from 'src/client/client.component';
 import { HomeComponent } from 'src/home/home.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'Signup',component:SignupComponent},
   {path:'ListeDEmandeDevis',component:ListeDemandeDevisComponent},
   {path:'ListeUsers',component:ListeUserComponent},
+  {path:'addDevis',component:AddDevisComponent},
   {path:'Profile', component:ProfileComponent},
   { path: '', redirectTo: 'signin', pathMatch: 'full' }, // Redirige par défaut vers la page "login"
 

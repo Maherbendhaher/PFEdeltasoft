@@ -12,6 +12,9 @@ export class ListeDemande{
   VIN:string
   Model_Version_No:string
   Confirmation:Boolean
+  Quantité:string
+  Couleur:string
+
 
 
 
@@ -26,6 +29,8 @@ constructor(
   Model_Code:string,
   Serial_No:string,
   VIN:string,
+  Quantité:string,
+  Couleur:string,
   Model_Version_No:string,
   Confirmation:Boolean){
       this.Email=Email
@@ -40,6 +45,8 @@ constructor(
       this.VIN=VIN
       this.Model_Code=Model_Code
       this.Confirmation=Confirmation
+      this.Quantité=Quantité
+      this.Couleur=Couleur
   }
 
 }

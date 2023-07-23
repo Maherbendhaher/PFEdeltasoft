@@ -17,13 +17,12 @@ export class ClientComponent {
     Prenom: '',
     Email: '',
     NumeroTEL: '',
-    Ville: ""
+    Ville: '',
+    Couleur:'',
+    Quantité:''
   };
-
   constructor(private clientService:ClientService,private router: Router){
     this.product=clientService.produit
-
-
 
   }
 
@@ -35,6 +34,9 @@ export class ClientComponent {
       this.client.Prenom=form.value["Prenom"]
       this.client.NumeroTEL=form.value["NumeroTEL"]
       this.client.Ville=form.value["Ville"]
+      this.client.Couleur=form.value["Couleur"]
+      this.client.Quantité=form.value["Quantité"]
+
       console.log(this.client);
       // handle form submission logic
       this.clientService.sendData(this.client,this.product)

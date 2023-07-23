@@ -47,6 +47,17 @@ h2{
   color: #ffffff;
   background: #4FC3A1;
 }
+.buttonValidations{
+  border-radius: 20px;
+  padding: 10px;
+  color: #4FC3A1;
+  font-size: 15px;
+}
+.buttonValidations:hover{
+background-color:green;
+color: #E6E4E4;
+cursor: pointer;
+}
 
 
 .fl-table thead th:nth-child(odd) {
