@@ -23,21 +23,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let ListeDemande of ListeDemande; let i = index">
-          <td>{{ ListeDemande.ID }}</td>
-          <td>{{ ListeDemande.Email }}</td>
-          <td>{{ ListeDemande.Nom }}</td>
-          <td>{{ ListeDemande.NumeroTEL }}</td>
-          <td>{{ ListeDemande.Make_Code }}</td>
-          <td>{{ ListeDemande.Model_Code }}</td>
-          <td>{{ ListeDemande.Model_Version_No }}</td>
-          <td>{{ ListeDemande.VIN }}</td>
-          <td>{{ ListeDemande.Location_Code }}</td>
-          <td>{{ ListeDemande.Serial_No }}</td>
-          <td>{{ ListeDemande.Couleur }}</td>
-          <td>{{ ListeDemande.Quantite }}</td>
+        <tr *ngFor="let Demande of ListeDemande; let i = index">
+          <td>{{ Demande.ID }}</td>
+          <td>{{ Demande.Email }}</td>
+          <td>{{ Demande.Nom }}</td>
+          <td>{{ Demande.NumeroTEL }}</td>
+          <td>{{ Demande.Make_Code }}</td>
+          <td>{{ Demande.Model_Code }}</td>
+          <td>{{ Demande.Model_Version_No }}</td>
+          <td>{{ Demande.VIN }}</td>
+          <td>{{ Demande.Location_Code }}</td>
+          <td>{{ Demande.Serial_No }}</td>
+          <td>{{ Demande.Couleur }}</td>
+          <td>{{ Demande.Quantite }}</td>
           <td>
-            <button class="buttonValidations" routerLink="/addDevis">
+            <button
+              (click)="validation(Demande)"
+              class="buttonValidations"
+            >
               Validations
             </button>
           </td>
@@ -59,4 +62,5 @@
     </table>
   </div>
 </div>
+
 <router-outlet></router-outlet>

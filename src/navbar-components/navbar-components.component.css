@@ -8,6 +8,10 @@ header{
 }
 .navbar
 {
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: space-around;
   background-color: black;
@@ -86,7 +90,7 @@ nav li:hover .profile-submenu {
   color: aqua;
   font-size: 25px;
   font-family: 'Courier New', Courier, monospace;
-  
+
 }
 
 

@@ -16,6 +16,8 @@ import { ListeDemandeDevisComponent } from 'src/liste-demande-devis/liste-demand
 import { ListeUserComponent } from 'src/liste-user/liste-user.component';
 import { ProfileComponent } from 'src/profile/profile.component';
 import { NavbarComponentsComponent } from 'src/navbar-components/navbar-components.component';
+import { AddDevisComponent } from 'src/add-devis/add-devis.component';
+import { FooterComponent } from 'src/footer/footer.component';
 
 
 
@@ -33,7 +35,9 @@ import { NavbarComponentsComponent } from 'src/navbar-components/navbar-componen
     NavbarComponent,
     ListeDemandeDevisComponent,
     ListeUserComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddDevisComponent,
+    FooterComponent
 
   ],
   imports: [

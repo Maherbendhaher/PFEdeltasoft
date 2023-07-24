@@ -14,7 +14,7 @@ label {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  width: 80%;
+  /* width: 80%; */
   margin-left: 3px;
   }
 .help-block.with-errors {
@@ -24,6 +24,35 @@ label {
 }
 
 .card{
-margin-left: 10px;
+margin-left: 50px;
 margin-right: 10px;
+position:static;
+
+
 }
+nav{
+  margin-top:auto;
+}
+.title-Produit{
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-weight: 500px;
+  color: aqua;
+}
+.product{
+  background-color: rgb(245, 245, 245);
+  width: 250px;
+  height: 280px;
+  border-radius: 20px ;
+  border-color: blueviolet;
+  padding-left: 55px;
+  gap: 20px;
+  display:flex auto;
+
+
+  }
+.row {
+  display:flex;
+}
+

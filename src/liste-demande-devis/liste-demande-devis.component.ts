@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { ListeDemandeDevisService } from './../services/liste-demande-devis.service';
 import { Component } from '@angular/core';
+import { ClientService } from 'src/services/client.service';
 
 @Component({
   selector: 'app-liste-demande-devis',
@@ -10,6 +12,7 @@ export class ListeDemandeDevisComponent {
 
   ListeDemande:any=[]
   constructor(private ListeDemandeDevisService: ListeDemandeDevisService,
+    private router : Router, private clientService: ClientService
     ){}
     ngOnInit() {
       this.ListeDemandeDevisService.getListeDemande()
@@ -21,5 +24,12 @@ export class ListeDemandeDevisComponent {
         .catch(error => {
           console.error(error);
         });
+    }
+
+    validation(ListeDemande:any){
+      console.log(ListeDemande);
+    this.clientService.p = ListeDemande;
+    this.router.navigate(['/addDevis']);
+
     }
 }

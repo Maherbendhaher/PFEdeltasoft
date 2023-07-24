@@ -1,0 +1,45 @@
+a {
+  color: aliceblue;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: aliceblue;
+
+}
+
+.form-control {
+  background-color: black;
+  color: aliceblue;
+}
+
+.form-control:focus {
+  background-color: black;
+  color: aliceblue;
+
+}
+
+footer {
+  background-color: black;
+  color: aliceblue;
+
+}
+p {
+  color: aliceblue;
+
+}
+.col-lg-4.col-md-6.col-md-6 p.small.text-muted {
+  color: aliceblue;
+}
+
+/* ==========================================
+    CUSTOM UTILS CLASSES
+  ========================================== */
+  body, html {
+    height: 100%;
+    color: aliceblue;
+
+  }
+
