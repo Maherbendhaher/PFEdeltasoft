@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { client } from 'src/model/client';
 import * as moment from 'moment';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ClientService {
   private _client!: client ;
   private _demande!:any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private toaster:ToastrService) {
 
   }
 
@@ -55,10 +56,14 @@ export class ClientService {
     this.http.post(url, data, { headers }).subscribe(
       response => {
         console.log('Post success:', response);
+        this.toaster.success("demande devis envoyé")
+
         // Handle the response here
       },
       error => {
         console.error('Post error:', error);
+        this.toaster.error("demande devis non envoyé","error")
+
         // Handle errors here
       }
     );

@@ -16,9 +16,9 @@ import { StockVinComponent } from 'src/stock-vin/stock-vin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full' }, // Redirige par défaut vers la page "login"
-  {path: 'products',  canActivate: [AdminAuthGuardService],component: ProductsComponent },
-  {path:'client',canActivate: [UserAuthGuard],component:ClientComponent},
-  {path:'home',canActivate:[CombinedAuthGuardService], component:HomeComponent},
+  {path: 'products', component: ProductsComponent },
+  {path:'client',component:ClientComponent},
+  {path:'home', component:HomeComponent},
   {path:'signin',component:SigninComponent},
   {path:'Signup',component:SignupComponent},
   {path:'ListeDEmandeDevis',canActivate: [AdminAuthGuardService],component:ListeDemandeDevisComponent},

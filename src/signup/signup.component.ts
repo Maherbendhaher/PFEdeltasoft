@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -25,7 +26,7 @@ export class SignupComponent implements OnInit {
   errorMessage = '';
 
   constructor(private authService: AuthService,
-    private router: Router) { }
+    private router: Router, private toastr:ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -39,9 +40,13 @@ export class SignupComponent implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;
         this.router.navigate(['signin']);
+        this.toastr.success("signup succesful")
+
 
       },
       err => {
+        this.toastr.error("signup failed")
+
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
 

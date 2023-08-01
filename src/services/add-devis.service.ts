@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { produit } from './../model/produit';
 import { ListeUser } from 'src/model/listeUser';
 import { client } from 'src/model/client';
+import { Toast, ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -19,7 +20,7 @@ export class AddDevisService {
 
   }
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private toaster:ToastrService) {
 
   }
 
@@ -57,10 +58,14 @@ const headers = new HttpHeaders({
 this.http.post(url, data, { headers }).subscribe(
   response => {
     console.log('Post success:', response);
+    this.toaster.success("devis envoyé")
+
+
     // Handle the response here
   },
   error => {
     console.error('Post error:', error);
+    this.toaster.error("devis non envoyé","error")
     // Handle errors here
   }
 );
@@ -85,6 +90,16 @@ return this.produit;
 
 set p(prod:produit) {
 this.produit = prod;
+}
+
+sendEmailWithPDF(pdfData: Blob, email: string, subject: string, message: string) {
+  const formData = new FormData();
+  formData.append('to', email);
+  formData.append('subject', subject);
+  formData.append('message', message);
+  formData.append('pdf', pdfData, 'form_data.pdf');
+
+  return this.http.post('http://localhost:7000/send-email', formData);
 }
 
 

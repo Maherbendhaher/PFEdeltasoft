@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { client } from 'src/model/client';
 import { produit } from 'src/model/produit';
 import { ClientService } from 'src/services/client.service';
@@ -25,13 +26,14 @@ export class ClientComponent {
     Quantité:''
   };
   constructor(private clientService:ClientService,private router: Router,
-    private tokenStorageService: TokenStorageService,){
+    private tokenStorageService: TokenStorageService,private toastr:ToastrService){
     this.product=clientService.produit
 
   }
   ngOnInit(): void {
     this.user=this.tokenStorageService.getUser()
     console.log(this.user);
+
   }
   onSubmit(form: NgForm){
     if (form.valid) {

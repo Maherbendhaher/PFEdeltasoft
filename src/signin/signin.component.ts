@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import {Component, OnInit} from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
 import { TokenStorageService } from 'src/services/token-storage.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signin',
@@ -27,7 +28,7 @@ export class SigninComponent implements OnInit {
 
   }
 
-  constructor( private authService: AuthService ,private tokenStorage: TokenStorageService,
+  constructor( private authService: AuthService ,private tokenStorage: TokenStorageService,private toastr: ToastrService,
     private router: Router){
 
 
@@ -39,6 +40,7 @@ export class SigninComponent implements OnInit {
 
     this.authService.login(email, password).subscribe(
       data => {
+        console.log("**************************")
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
 
@@ -46,14 +48,17 @@ export class SigninComponent implements OnInit {
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
         this.router.navigate(['home']);
+        this.toastr.success("login succesful")
+        this.authService.setUser(data)
 
 
       },
       err => {
+        this.toastr.error("login failed")
         this.errorMessage = err.error.message;
         console.log(this.errorMessage)
         this.isLoginFailed = true;
-        alert('Échec de la connexion. Veuillez vérifier vos informations d\'identification.');
+
 
       }
     );

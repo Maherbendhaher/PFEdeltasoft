@@ -19,18 +19,7 @@ export class AuthService {
     return this.http.post(AUTH_API + 'signIn', {
       email,
       password
-    }, httpOptions).pipe(
-      map((response: any) => {
-        // Assuming your server returns a response object with user details including roles
-        this.user = response;
-        return response;
-      }),
-      catchError((error) => {
-        // Handle login errors here
-        console.log('Login error:', error);
-        return of(null);
-      })
-    );;
+    }, httpOptions)
   }
   getUser(): any {
     return this.user;

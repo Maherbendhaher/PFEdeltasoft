@@ -11,6 +11,7 @@ const baseUrl = 'http://localhost:7000/api/findAll';
 export class UserService {
 
 
+
   constructor(private http: HttpClient) { }
   getPublicContent(): Observable<any> {
     return this.http.get(API_URL + 'all', { responseType: 'text' });
@@ -29,4 +30,8 @@ export class UserService {
   suprimerUser=(id : Number)=>{
            return this.http.delete(API_URL+`user+/${id}`)
   }
+
+
+
+ 
 }

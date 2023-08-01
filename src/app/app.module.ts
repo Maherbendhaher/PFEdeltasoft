@@ -19,6 +19,9 @@ import { NavbarComponentsComponent } from 'src/navbar-components/navbar-componen
 import { AddDevisComponent } from 'src/add-devis/add-devis.component';
 import { FooterComponent } from 'src/footer/footer.component';
 import { StockVinComponent } from 'src/stock-vin/stock-vin.component';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+
+import { ToastrModule, provideToastr } from 'ngx-toastr';
 
 
 
@@ -47,12 +50,17 @@ import { StockVinComponent } from 'src/stock-vin/stock-vin.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
 
 
 
   ],
-  providers: [],
+  providers: [
+    provideAnimations(),
+    provideToastr(),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
