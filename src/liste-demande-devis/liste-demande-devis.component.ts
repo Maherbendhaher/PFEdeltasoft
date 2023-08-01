@@ -27,8 +27,11 @@ export class ListeDemandeDevisComponent {
     }
 
     validation(ListeDemande:any){
+      console.log("ùùùùùùùùùù")
       console.log(ListeDemande);
-    this.clientService.p = ListeDemande;
+      console.log("ùùùùùùùùùù")
+    this.clientService.demande = ListeDemande;
+
     this.router.navigate(['/addDevis']);
 
     }

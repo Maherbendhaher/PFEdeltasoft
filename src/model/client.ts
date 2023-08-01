@@ -1,28 +1,31 @@
 export  class client
 {
-  Nom:string
-  Prenom:string
-  Email:string
-  NumeroTEL:string
-  Ville:String
+  nom:string
+  prenom:string
+  numero:string
+  email:string
+  adresse:string
+  gouvernorat:string
   Quantité:String
   Couleur:string
   constructor(
-    Nom:string,
-    Prenom:string,
-    Email:string,
-    NumeroTEL:string,
-    Ville:String,
+    nom:string,
+    prenom:string,
+    numero:string,
+    email:string,
+    adresse:string,
+    gouvernorat:string,
     Quantité:string,
     Couleur:string
     ){
-      this.Nom=Nom
-      this.Email=Email
-      this.Ville=Ville
-      this.NumeroTEL=NumeroTEL
-      this.Prenom=Prenom
+      this.nom=nom
+      this.email=email
+      this.adresse=adresse
+      this.numero=numero
+      this.prenom=prenom
       this.Quantité=Quantité
       this.Couleur=Couleur
+      this.gouvernorat=gouvernorat
 
   }
 

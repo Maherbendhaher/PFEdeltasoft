@@ -4,7 +4,8 @@ export class ListeDemande{
   Nom:string
   Prenom:string
   NumeroTEL:string
-  Ville:string
+  adresse:string
+  gouvernorat:string
   Location_Code:string
   Make_Code:string
   Model_Code:string
@@ -23,7 +24,8 @@ constructor(
   Nom:string,
   Prenom:string,
   NumeroTEL:string,
-  Ville:string,
+  adresse:string,
+  gouvernorat:string,
   Location_Code:string,
   Make_Code:string,
   Model_Code:string,
@@ -37,7 +39,8 @@ constructor(
       this.Nom=Nom
       this.Prenom=Prenom
       this.NumeroTEL=NumeroTEL
-      this.Ville=Ville
+      this.adresse=adresse
+      this.gouvernorat=gouvernorat                              
       this.Location_Code=Location_Code
       this.Make_Code=Make_Code
       this.Model_Version_No=Model_Version_No

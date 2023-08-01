@@ -26,4 +26,7 @@ export class UserService {
   getAll(): Observable<any> {
     return this.http.get(baseUrl);
   }
+  suprimerUser=(id : Number)=>{
+           return this.http.delete(API_URL+`user+/${id}`)
+  }
 }

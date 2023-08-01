@@ -40,5 +40,17 @@ export class ListeUserService {
       })
       .catch(error => console.error(error));
   }
+  deleteListeUser() {
+    const headers = {
+      Authorization: this.getAuthorizationHeader()
+    };
+
+    return axios.delete(this.url, { headers })
+      .then(response => {
+        const ListeUser = response.data.value;
+        return ListeUser;
+      })
+      .catch(error => console.error(error));
+  }
 
 }

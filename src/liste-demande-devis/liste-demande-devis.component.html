@@ -8,9 +8,11 @@
           <th>ID</th>
           <th>Email</th>
           <th>Nom</th>
-          <!-- <th>Prenom</th>-->
+          <th>Prenom</th>
           <th>NumeroTEL</th>
-          <!-- <th>Ville</th>-->
+          <th>adresse</th>
+          <th>gouvernorat</th>
+
           <th>Make_Code</th>
           <th>Model_Code</th>
           <th>Model_Version_No</th>
@@ -25,9 +27,12 @@
       <tbody>
         <tr *ngFor="let Demande of ListeDemande; let i = index">
           <td>{{ Demande.ID }}</td>
-          <td>{{ Demande.Email }}</td>
-          <td>{{ Demande.Nom }}</td>
-          <td>{{ Demande.NumeroTEL }}</td>
+          <td>{{ Demande.email }}</td>
+          <td>{{ Demande.nom }}</td>
+          <td>{{ Demande.prenom }}</td>
+          <td>{{ Demande.numero }}</td>
+          <td>{{ Demande.adresse }}</td>
+          <td>{{ Demande.gouvernorat }}</td>
           <td>{{ Demande.Make_Code }}</td>
           <td>{{ Demande.Model_Code }}</td>
           <td>{{ Demande.Model_Version_No }}</td>

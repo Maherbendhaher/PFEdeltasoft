@@ -97,3 +97,10 @@ nav li:hover .profile-submenu {
 .profile-submenu a i {
   margin-right: 10px;
 }
+
+.footer {
+position: relative;
+top: 500px;
+margin-bottom: 0;
+
+}

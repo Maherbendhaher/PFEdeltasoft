@@ -18,6 +18,7 @@ import { ProfileComponent } from 'src/profile/profile.component';
 import { NavbarComponentsComponent } from 'src/navbar-components/navbar-components.component';
 import { AddDevisComponent } from 'src/add-devis/add-devis.component';
 import { FooterComponent } from 'src/footer/footer.component';
+import { StockVinComponent } from 'src/stock-vin/stock-vin.component';
 
 
 
@@ -37,7 +38,8 @@ import { FooterComponent } from 'src/footer/footer.component';
     ListeUserComponent,
     ProfileComponent,
     AddDevisComponent,
-    FooterComponent
+    FooterComponent,
+    StockVinComponent
 
   ],
   imports: [
@@ -45,7 +47,8 @@ import { FooterComponent } from 'src/footer/footer.component';
     HttpClientModule,
     AppRoutingModule,
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
+
 
 
   ],

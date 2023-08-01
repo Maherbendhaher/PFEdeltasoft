@@ -1,21 +1,19 @@
-import { ServiceService } from 'src/services/service.service';
 import { Component } from '@angular/core';
-import { ClientService } from 'src/services/client.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { produit } from 'src/model/produit';
-import { Router, ActivatedRoute } from '@angular/router';
-import { SharedService } from 'src/services/shared-service.service';
-
+import { ClientService } from 'src/services/client.service';
+import { ServiceService } from 'src/services/service.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-stock-vin',
+   templateUrl: './stock-vin.component.html',
+  styleUrls: ['./stock-vin.component.css']
 })
-export class ProductsComponent {
+export class StockVinComponent {
   products: any = [];
 
   constructor(private serviceService: ServiceService, private clientService: ClientService,
-    private router: Router, private activatedRoute: ActivatedRoute,private sharedService: SharedService) {
+    private router: Router, private activatedRoute: ActivatedRoute,) {
       this.activatedRoute.queryParams.subscribe(params => {
         switch (params['filter']) {
           case 'CLASSE A':
@@ -76,4 +74,5 @@ export class ProductsComponent {
     this.clientService.produit = product;
     this.router.navigate(['/client']);
   }
+
 }

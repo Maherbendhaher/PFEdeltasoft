@@ -1,6 +1,6 @@
-import { produit } from './../model/produit';
-import { Injectable } from '@angular/core';
+import { produit } from 'src/model/produit';
 
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { client } from 'src/model/client';
 import * as moment from 'moment';
@@ -10,15 +10,9 @@ import * as moment from 'moment';
   providedIn: 'root'
 })
 export class ClientService {
-  produit={
-    Location_Code:"",
-    Make_Code:"",
-    Model_Code:"",
-    Serial_No:"",
-    VIN:"",
-    Model_Version_No:""
-
-  }
+  private _produit!: produit;
+  private _client!: client ;
+  private _demande!:any;
 
   constructor(private http: HttpClient) {
 
@@ -34,18 +28,21 @@ export class ClientService {
     const url = 'http://192.168.81.39:8048/MOBILE/ODataV4/Company(\'LE%20MOTEUR%20SA\')/CONTACTDEVIS';
     const data = {
 
-        Nom:client.Nom,
-        Prenom:client.Prenom,
-        Email:client.Email,
-        NumeroTEL:client.NumeroTEL,
-        Ville:client.Ville,
+        nom:client.nom,
+        prenom:client.prenom,
+        email:client.email,
+        numero:client.numero,
+        adresse:client.adresse,
+        gouvernorat:client.gouvernorat,
         Location_Code:produit.Location_Code,
         Make_Code:produit.Make_Code,
         Model_Code:produit.Model_Code,
         Serial_No:produit.Serial_No,
         VIN:produit.VIN,
         Model_Version_No:produit.Model_Code,
-        
+        Couleur:client.Couleur,
+        Quantité:client.Quantité,
+
         Date: moment().format('YYYY-MM-DD')
 
     };
@@ -75,18 +72,31 @@ export class ClientService {
     return `Basic ${btoa(`${auth.username}:${auth.password}`)}`;
   }
 
-
-
-
-
-
-  get p() {
-    return this.produit;
+  get produit(): produit {
+    return this._produit;
   }
 
-  set p(prod:produit) {
-    this.produit = prod;
+  set produit(newProduit: produit) {
+    this._produit = newProduit;
   }
+
+  // Getter and Setter for 'client'
+  get client(): client {
+    return this._client;
+  }
+
+  set client(newClient: client) {
+    this._client = newClient;
+  }
+  get demande(): any {
+    return this._demande;
+  }
+
+  set demande(dem: client) {
+    this._demande = dem;
+  }
+
+
 
 
 }

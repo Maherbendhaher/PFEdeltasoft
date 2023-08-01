@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminAuthGuardService, UserAuthGuard } from 'src/AuthGuard/admin-auth-guard.service';
+import { CombinedAuthGuardService } from 'src/AuthGuard/combined-auth-guard.service';
 import { AddDevisComponent } from 'src/add-devis/add-devis.component';
 
 import { ClientComponent } from 'src/client/client.component';
@@ -10,19 +12,20 @@ import { ProductsComponent } from 'src/products/products.component';
 import { ProfileComponent } from 'src/profile/profile.component';
 import { SigninComponent } from 'src/signin/signin.component';
 import { SignupComponent } from 'src/signup/signup.component';
+import { StockVinComponent } from 'src/stock-vin/stock-vin.component';
 
 const routes: Routes = [
-
-  {path: 'products', component: ProductsComponent },
-  {path:'client',component:ClientComponent},
-  {path:'home', component:HomeComponent},
+  { path: '', redirectTo: 'signin', pathMatch: 'full' }, // Redirige par défaut vers la page "login"
+  {path: 'products',  canActivate: [AdminAuthGuardService],component: ProductsComponent },
+  {path:'client',canActivate: [UserAuthGuard],component:ClientComponent},
+  {path:'home',canActivate:[CombinedAuthGuardService], component:HomeComponent},
   {path:'signin',component:SigninComponent},
   {path:'Signup',component:SignupComponent},
-  {path:'ListeDEmandeDevis',component:ListeDemandeDevisComponent},
-  {path:'ListeUsers',component:ListeUserComponent},
-  {path:'addDevis',component:AddDevisComponent},
+  {path:'ListeDEmandeDevis',canActivate: [AdminAuthGuardService],component:ListeDemandeDevisComponent},
+  {path:'ListeUsers',canActivate: [AdminAuthGuardService],component:ListeUserComponent},
+  {path:'addDevis',canActivate: [AdminAuthGuardService], component:AddDevisComponent},
   {path:'Profile', component:ProfileComponent},
-  { path: '', redirectTo: 'signin', pathMatch: 'full' }, // Redirige par défaut vers la page "login"
+  {path:'StockVIN',canActivate: [AdminAuthGuardService], component:StockVinComponent}
 
 
 ];

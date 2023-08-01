@@ -27,4 +27,6 @@ export class ListeUserComponent {
     }
 
 
+    supprimerUser(id:Number){}
+
 }
