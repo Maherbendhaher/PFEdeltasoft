@@ -1,206 +1,169 @@
 <div class="nav"><app-navbar-components></app-navbar-components></div>
-
-<div class="container">
-  <div class="text-center mt-5">
-    <h1>création Devis</h1>
+<div class="components-container">
+  <div class="text-center mt-5 titre-create">
+    <h1>CREATE DEVIS</h1>
   </div>
-
-  <div class="row">
-    <div class="col-lg-7 mx-auto">
-      <div class="card mt-2 mx-auto p-4 bg-light">
-        <div class="card-body bg-light">
-          <div class="container">
-            <form
-              id="contact-form"
-              role="form"
-              class="w-full max-w-sm"
-              #myForm="ngForm"
-              (ngSubmit)="onSubmit(myForm)"
-            >
-              <div class="controls">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="form_name">nom *</label>
-                      <input
-                      [(ngModel)]="demande.nom"
-                        id="nom"
-                        type="text"
-                        name="nom"
-                        class="form-control"
-                        placeholder=" nom *"
-                        required="required"
-                        data-error="nom is required."
-                        readonly
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="form_name">numero *</label>
-                      <input
-                        [(ngModel)]="demande.numero"
-                        id="numero"
-                        type="numero"
-                        name="numero"
-                        class="form-control"
-                        placeholder=" numero *"
-                        required="required"
-                        data-error="numero is required."
-                        readonly
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="form_email">email *</label>
-                      <input
-                      [(ngModel)]="demande.email"
-                        id="form_email"
-                        type="email"
-                        name="email"
-                        class="form-control"
-                        placeholder="Please enter your email *"
-                        required="required"
-                        data-error="Valid email is required."
-                        readonly
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="form_need">Quantity *</label>
-                      <select
-                      [(ngModel)]="demande.Quantity"
-                        id="Quantity"
-                        name="Quantity"
-                        type="text"
-                        placeholder="Quantity"
-                        class="form-control"
-
-                        data-error="Please specify your Quantity."
-                      >
-                        <option value="" selected disabled>--Quantity--</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option *ngFor="let Quantity of quantities" [value]="Quantity">{{ Quantity }}</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="form-group">prenom *</label>
-
-                      <input
-                      [(ngModel)]="demande.prenom"
-                        id="prenom"
-                        type="text"
-                        name="prenom"
-                        class="form-control"
-                        placeholder=" prenom *"
-                        required="required"
-                        data-error="prenom is required."
-                        readonly
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="gouvernorat">gouvernorat *</label>
-                      <input
-                      [(ngModel)]="demande.gouvernorat"
-
-                        readonly
-                        id="gouvernorat"
-                        type="text"
-                        name="gouvernorat"
-                        class="form-control"
-                        placeholder="gouvernorat *"
-                        required="required"
-                        data-error="Valid gouvernorat is required."
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="adresse">adresse *</label>
-                      <input
-                      [(ngModel)]="demande.adresse"
-
-                        readonly
-                        id="adresse"
-                        type="text"
-                        name="adresse"
-                        class="form-control"
-                        placeholder="adresse *"
-                        required="required"
-                        data-error="Valid adresse is required."
-                      />
-                    </div>
-                    <div class="form-group">
-                      <label for="form_need">Couleur *</label>
-                      <select
-
-                        [(ngModel)]="demande.Couleur"
-
-                        id="Couleur"
-                        type="text"
-                        name="Couleur"
-                        class="form-control"
-                        required="required"
-                        data-error="Couleur"
-                      >
-                        <option value="" selected disabled>-- Couleur--</option>
-                        <option>Noir</option>
-                        <option>Rouge</option>
-                        <option>Blanc</option>
-                        <!-- <option>Other</option> -->
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label for="form_message">Message *</label>
-                      <textarea
-                        id="form_message"
-                        name="message"
-                        class="form-control"
-                        placeholder="Write your message here."
-                        rows="4"
-                        required="required"
-                        data-error="Please, leave us a message."
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-md-12">
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="container">
+          <form
+            id="contact-form"
+            role="form"
+            class="w-full max-w-sm"
+            #myForm="ngForm"
+            (ngSubmit)="onSubmit(myForm)"
+          >
+            <div class="controls">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_name">nom *</label>
                     <input
-                      type="submit"
-                      class="btn btn-success btn-send pt-2 btn-block"
-                      value="Send Message"
+                      [(ngModel)]="demande.nom"
+                      id="nom"
+                      type="text"
+                      name="nom"
+                      class="form-control"
+                      placeholder=" nom *"
+                      required="required"
+                      data-error="nom is required."
+                      readonly
                     />
                   </div>
+                  <div class="form-group">
+                    <label for="form_name">numero *</label>
+                    <input
+                      [(ngModel)]="demande.numero"
+                      id="numero"
+                      type="numero"
+                      name="numero"
+                      class="form-control"
+                      placeholder=" numero *"
+                      required="required"
+                      data-error="numero is required."
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="form_email">email *</label>
+                    <input
+                      [(ngModel)]="demande.email"
+                      id="form_email"
+                      type="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="Please enter your email *"
+                      required="required"
+                      data-error="Valid email is required."
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="form_need">Quantity *</label>
+                    <select
+                      [(ngModel)]="demande.Quantity"
+                      id="Quantity"
+                      name="Quantity"
+                      type="text"
+                      placeholder="Quantity"
+                      class="form-control"
+                      data-error="Please specify your Quantity."
+                    >
+                      <option value="" selected disabled>--Quantity--</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option
+                        *ngFor="let Quantity of quantities"
+                        [value]="Quantity"
+                      >
+                        {{ Quantity }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form-group">prenom *</label>
+
+                    <input
+                      [(ngModel)]="demande.prenom"
+                      id="prenom"
+                      type="text"
+                      name="prenom"
+                      class="form-control"
+                      placeholder=" prenom *"
+                      required="required"
+                      data-error="prenom is required."
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="gouvernorat">gouvernorat *</label>
+                    <input
+                      [(ngModel)]="demande.gouvernorat"
+                      readonly
+                      id="gouvernorat"
+                      type="text"
+                      name="gouvernorat"
+                      class="form-control"
+                      placeholder="gouvernorat *"
+                      required="required"
+                      data-error="Valid gouvernorat is required."
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="adresse">adresse *</label>
+                    <input
+                      [(ngModel)]="demande.adresse"
+                      readonly
+                      id="adresse"
+                      type="text"
+                      name="adresse"
+                      class="form-control"
+                      placeholder="adresse *"
+                      required="required"
+                      data-error="Valid adresse is required."
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="form_need">Couleur *</label>
+                    <select
+                      [(ngModel)]="demande.Couleur"
+                      id="Couleur"
+                      type="text"
+                      name="Couleur"
+                      class="form-control"
+                      required="required"
+                      data-error="Couleur"
+                    >
+                      <option value="" selected disabled>-- Couleur--</option>
+                      <option>Noir</option>
+                      <option>Rouge</option>
+                      <option>Blanc</option>
+                      <!-- <option>Other</option> -->
+                    </select>
+                  </div>
                 </div>
               </div>
-              <div class="md:flex md:items-center">
-                <div class="md:w-1/3"></div>
-                <div class="md:w-2/3">
-                  <button
-                    class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded"
-                    type="submit"
-                  >
-                    submit
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class=" button-validations">
+              <button
+                class="shadow bg-green-500 hover:bg-green-700 pt-16 focus:shadow-outline focus:outline-none font-bold py-2 px-6 rounded"
+                type="submit"
+              >
+                validation
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-      <!-- /.8 -->
     </div>
-    <!-- /.row-->
-  </div>
 
-  <div class="col-lg-6 col-md-6">
-    <div class="product">
-      <div class="title-Produit">produit</div>
-      <!-- <p>{{ product.email }}</p> -->
+    <div class="details">
+      <div class="title-Produit">DETAILLES</div>
       <p>{{ demande.Location_Code }}</p>
       <p>{{ demande.Make_Code }}</p>
       <p>{{ demande.Model_Code }}</p>
@@ -209,38 +172,4 @@
       <p>{{ demande.Model_Version_No }}</p>
     </div>
   </div>
-  <!-- <table>
-    <tr>
-      <th>Champ</th>
-      <th>Valeur</th>
-    </tr>
-    <tr>
-      <td>Produit</td>
-      <td>{{ product.email }}</td>
-    </tr>
-    <tr>
-      <td>Location Code</td>
-      <td>{{ product.Location_Code }}</td>
-    </tr>
-    <tr>
-      <td>Make Code</td>
-      <td>{{ product.Make_Code }}</td>
-    </tr>
-    <tr>
-      <td>Model Code</td>
-      <td>{{ product.Model_Code }}</td>
-    </tr>
-    <tr>
-      <td>Serial No</td>
-      <td>{{ product.Serial_No }}</td>
-    </tr>
-    <tr>
-      <td>VIN</td>
-      <td>{{ product.VIN }}</td>
-    </tr>
-    <tr>
-      <td>Model Version No</td>
-      <td>{{ product.Model_Version_No }}</td>
-    </tr>
-  </table> -->
 </div>

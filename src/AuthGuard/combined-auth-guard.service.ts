@@ -17,7 +17,7 @@ export class CombinedAuthGuardService implements CanActivate {
     }
 
     // If neither condition is met, navigate to the login page or any other unauthorized page.
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
     return false;
   }
 }

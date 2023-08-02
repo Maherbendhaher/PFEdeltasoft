@@ -1,43 +1,55 @@
 <app-navbar-components></app-navbar-components>
+<div class="product-container">
+  <div class="navBar"></div>
+  <div class="product-content">
+    <div class="table-wrapper">
+      <table class="fl-table">
+        <thead>
+          <tr>
+            <th>Make_Code</th>
+            <th>Model_Code</th>
+            <th>Model_Version_No</th>
+            <th>VIN</th>
+            <th>Location_Code</th>
+            <th>Serial_No</th>
+            <th>demande devis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products; let i = index">
+            <td>{{ product.Make_Code }}</td>
+            <td>{{ product.Model_Code }}</td>
+            <td>{{ product.Model_Version_No }}</td>
+            <td>{{ product.VIN }}</td>
+            <td>{{ product.Location_Code }}</td>
+            <td>{{ product.Serial_No }}</td>
 
-<div style="padding-top: 120px">
-  <div class="table-wrapper">
-    <table class="fl-table">
-      <thead>
-        <tr>
-          <th>Make_Code</th>
-          <th>Model_Code</th>
-          <th>Model_Version_No</th>
-          <th>VIN</th>
-          <th>Location_Code</th>
-          <th>Serial_No</th>
-          <th>demande devis</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of products; let i = index">
-          <td>{{ product.Make_Code }}</td>
-          <td>{{ product.Model_Code }}</td>
-          <td>{{ product.Model_Version_No }}</td>
-          <td>{{ product.VIN }}</td>
-          <td>{{ product.Location_Code }}</td>
-          <td>{{ product.Serial_No }}</td>
+            <td>
+              <button
+                class="continue-application"
+                (click)="demandeDevis(product)"
+              >
+                <div>
+                  <div class="pencil"></div>
+                  <div class="folder">
+                    <div class="top">
+                      <svg viewBox="0 0 24 27">
+                        <path
+                          d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="paper"></div>
+                  </div>
+                </div>
+                Demmande devis
+              </button>
+            </td>
+          </tr>
+        </tbody>
 
-          <td>
-            <button (click)="demandeDevis(product)">Demande devis</button>
-          </td>
-          <td>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-              <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-              <path
-                d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
-              />
-            </svg>
-          </td>
-        </tr>
-      </tbody>
-
-      <tbody></tbody>
-    </table>
+        <tbody></tbody>
+      </table>
+    </div>
   </div>
 </div>

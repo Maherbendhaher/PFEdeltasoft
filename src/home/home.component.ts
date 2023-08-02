@@ -33,22 +33,15 @@ export class HomeComponent {
         console.log()
         this.router.navigate(['/products'],{ queryParams: { filter: this.Queryparam } })
 
-
-
       })
       .catch(error => {
         console.error(error);
       });
   }
   login() {
-    // Ici, vous devrez vérifier les identifiants de l'utilisateur
-    // et définir la variable isLoggedIn en fonction du résultat.
-    // Pour cet exemple, nous allons simplement supposer que l'utilisateur est connecté avec succès.
 
-    // Simulation de la connexion réussie en définissant isLoggedIn sur true.
     this.isLoggedIn = true;
 
-    // Après le succès de la connexion, redirigez l'utilisateur vers la page "CLASSE A"
     this.router.navigate(['/CLASSE A']);
   }
   redirectToSignIn() {

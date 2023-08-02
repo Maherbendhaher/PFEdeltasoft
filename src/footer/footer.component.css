@@ -9,6 +9,17 @@ a:hover, a:focus {
   color: aliceblue;
 
 }
+.contact-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.socite{
+  padding-right: 100px;
+}
+.copyright{
+  color: white;
+}
 .text{
   color: aliceblue;
 }

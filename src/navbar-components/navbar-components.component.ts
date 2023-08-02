@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ServiceService } from 'src/services/service.service';
 import { TokenStorageService } from 'src/services/token-storage.service';
 import { AuthService } from 'src/services/auth.service';
+import { AdminAuthGuardService } from 'src/AuthGuard/admin-auth-guard.service';
 
 @Component({
   selector: 'app-navbar-components',
@@ -22,7 +23,7 @@ export class NavbarComponentsComponent  implements OnInit{
   }
 
  constructor(private serviceService: ServiceService,
-  private authService:AuthService
+  private authService:AuthService,private serviseAdmin:AdminAuthGuardService
   ,
   private tokenStorageService: TokenStorageService,
   private router: Router){
@@ -32,6 +33,9 @@ export class NavbarComponentsComponent  implements OnInit{
 
  name = this.tokenStorageService.saveUser
 
+getAdmin(){
+  this.serviseAdmin.canActivate
+}
 
  toggleProfileMenu() {
   this.showProfileMenu = !this.showProfileMenu;

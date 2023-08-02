@@ -13,13 +13,13 @@
       <li>
         <a routerLink="/contact">Contact</a>
       </li>
-      <li>
+      <li *ngIf="user.roles == 'ROLE_ADMIN'">
         <a routerLink="/StockVIN">StockVIN</a>
       </li>
-      <li>
+      <li *ngIf="user.roles == 'ROLE_ADMIN'">
         <a routerLink="/ListeDEmandeDevis">ListeDEmandeDevis</a>
       </li>
-      <li>
+      <li *ngIf="user.roles == 'ROLE_ADMIN'">
         <a routerLink="/ListeUsers">ListeUsers</a>
       </li>
 
@@ -42,11 +42,9 @@
             >
           </li>
         </ul>
-
+      </li>
     </ul>
   </div>
-  <div *ngIf="user" class="nom">
-    Bienvenu {{user.nom}}
-  </div>
+  <div *ngIf="user" class="nom">Bienvenu {{ user.nom }}</div>
 </nav>
 <router-outlet></router-outlet>

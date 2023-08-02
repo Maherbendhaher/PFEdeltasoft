@@ -5,6 +5,7 @@ import { CombinedAuthGuardService } from 'src/AuthGuard/combined-auth-guard.serv
 import { AddDevisComponent } from 'src/add-devis/add-devis.component';
 
 import { ClientComponent } from 'src/client/client.component';
+import { DetailsComponent } from 'src/details/details.component';
 import { HomeComponent } from 'src/home/home.component';
 import { ListeDemandeDevisComponent } from 'src/liste-demande-devis/liste-demande-devis.component';
 import { ListeUserComponent } from 'src/liste-user/liste-user.component';
@@ -15,7 +16,7 @@ import { SignupComponent } from 'src/signup/signup.component';
 import { StockVinComponent } from 'src/stock-vin/stock-vin.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'signin', pathMatch: 'full' }, // Redirige par défaut vers la page "login"
+  { path: '', redirectTo: 'signin', pathMatch: 'full' },
   {path: 'products', component: ProductsComponent },
   {path:'client',component:ClientComponent},
   {path:'home', component:HomeComponent},
@@ -25,8 +26,8 @@ const routes: Routes = [
   {path:'ListeUsers',canActivate: [AdminAuthGuardService],component:ListeUserComponent},
   {path:'addDevis',canActivate: [AdminAuthGuardService], component:AddDevisComponent},
   {path:'Profile', component:ProfileComponent},
-  {path:'StockVIN',canActivate: [AdminAuthGuardService], component:StockVinComponent}
-
+  {path:'StockVIN',canActivate: [AdminAuthGuardService], component:StockVinComponent},
+  {path:'details',component:DetailsComponent}
 
 ];
 

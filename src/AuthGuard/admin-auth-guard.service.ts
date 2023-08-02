@@ -34,7 +34,7 @@ export class UserAuthGuard implements CanActivate {
     }
 
     // If user is not a regular user, navigate to the login page or any other unauthorized page.
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
     return false;
   }
 }
