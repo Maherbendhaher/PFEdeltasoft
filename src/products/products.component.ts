@@ -4,6 +4,7 @@ import { ClientService } from 'src/services/client.service';
 import { produit } from 'src/model/produit';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SharedService } from 'src/services/shared-service.service';
+import { AdminAuthGuardService } from 'src/AuthGuard/admin-auth-guard.service';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { SharedService } from 'src/services/shared-service.service';
 })
 export class ProductsComponent {
   products: any = [];
+  user: any | null;
+
 
   constructor(private serviceService: ServiceService, private clientService: ClientService,
-    private router: Router, private activatedRoute: ActivatedRoute,private sharedService: SharedService) {
+    private router: Router, private activatedRoute: ActivatedRoute,private sharedService: SharedService,private serviseAdmin:AdminAuthGuardService) {
       this.activatedRoute.queryParams.subscribe(params => {
         switch (params['filter']) {
           case 'CLASSE A':

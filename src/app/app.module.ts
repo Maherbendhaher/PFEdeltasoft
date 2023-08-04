@@ -22,6 +22,7 @@ import { StockVinComponent } from 'src/stock-vin/stock-vin.component';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
 import { ToastrModule, provideToastr } from 'ngx-toastr';
+import { InscriptionComponent } from 'src/inscription/inscription.component';
 
 
 
@@ -42,7 +43,8 @@ import { ToastrModule, provideToastr } from 'ngx-toastr';
     ProfileComponent,
     AddDevisComponent,
     FooterComponent,
-    StockVinComponent
+    StockVinComponent,
+    InscriptionComponent
 
   ],
   imports: [

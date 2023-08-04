@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
-
-<div class="signup-content">
+<div class="sinscri">
+  <div class="signup-content">
   <div class="col-md-12 signup">
     <div class="card card-container">
       <img
@@ -79,9 +79,9 @@
         <div class="form-group">
           <label for="email">email</label>
           <input
-            type="mail"
+            type="email"
             class="form-control"
-            name="mail"
+            name="email"
             [(ngModel)]="form.email"
             required
             email
@@ -164,7 +164,8 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block">Sign Up</button>
+          <button class="btn btn-primary btn-block">s'inscrire
+          </button>
         </div>
 
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
@@ -177,4 +178,5 @@
       </div>
     </div>
   </div>
-</div>
+</div></div>
+

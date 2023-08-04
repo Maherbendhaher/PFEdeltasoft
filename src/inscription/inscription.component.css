@@ -2,16 +2,13 @@
 
 
 .container{
-  max-width: 800px;
-  background: #fff;
-  width: 800px;
-  padding: 25px 40px 10px 40px;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://wallpaper.dog/large/20546973.jpg');
+
 }
 
-.container .text{
+.text{
   text-align: center;
   font-size: 41px;
   font-weight: 600;
@@ -21,18 +18,50 @@
   -webkit-text-fill-color: transparent;
 }
 .container form{
-  padding: 40px 0 0 0;
+  width: ;
+
+}
+.form-label{
+  color: #fff;
+
+}
+
+.row{
+  display: flex;
+  align-items:center;
+  margin-left: calc(11.5 * var(--bs-gutter-x));
+
+
+
+}
+.for{
+  border : none!important;;
+    background-image: url('https://wallpaper.dog/large/20546973.jpg');
+  background-size: 90%;
+}
+
+.text-center{
+  color: #fff;
+  cursor: pointer;
 }
 .container form .form-row{
   display: flex;
   margin: 32px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+
+
+
 }
 form .form-row .input-data{
-  width: 100%;
-  height: 40px;
-  margin: 0 20px;
-  position: relative;
+  width: calc(30% - 20px);
+    height: 40px;
+    margin-bottom: 20px;
+    position: relative;
+    justify-content: center;
 }
+
 
 .input-data input,
 .textarea textarea{
@@ -54,11 +83,21 @@ form .form-row .input-data{
   padding-top: 10px;
 }
 .input-data label{
-  position: relative;
+  position: absolute;
   pointer-events: none;
   bottom: 10px;
   font-size: 16px;
   transition: all 0.3s ease;
+  display:flex ;
+
+}
+.form-control{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
 }
 .textarea label{
   width: 100%;
@@ -69,7 +108,8 @@ form .form-row .input-data{
   position: absolute;
   bottom: 0;
   height: 2px;
-  width: 100%;
+  width: 50%;
+
 }
 .input-data .underline:before{
   position: absolute;
@@ -80,12 +120,15 @@ form .form-row .input-data{
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.3s ease;
+  display:flex;
+
 }
 .input-data input:focus ~ .underline:before,
 .input-data input:valid ~ .underline:before,
 .textarea textarea:focus ~ .underline:before,
 .textarea textarea:valid ~ .underline:before{
   transform: scale(1);
+
 }
 .submit-btn .input-data{
   overflow: hidden;
@@ -101,7 +144,7 @@ form .form-row .input-data{
   transition: all 0.4s;
 }
 .submit-btn .input-data:hover .inner{
-  left: 0;
+  left: 100%;
 }
 .submit-btn .input-data input{
   background: none;
@@ -115,20 +158,15 @@ form .form-row .input-data{
   position: relative;
   z-index: 2;
 }
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
   .container .text{
     font-size: 30px;
-    position: relative;
-
   }
   .container form{
     padding: 10px 0 0 0;
   }
   .container form .form-row{
     display: block;
-  }
-  .card-container{
-    padding: 20px;
   }
   form .form-row .input-data{
     margin: 35px 0!important;
@@ -137,18 +175,45 @@ form .form-row .input-data{
     width: 40%!important;
   }
 }
-.signup-content{
-
-  width: 100%;
-  height:100%;
+.container form .input-row {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top:100px;
-  
+
+}
+
+.input-row .input-data {
+  width: calc(50% - 20px);
+  height: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+.text-under-inputs {
+  margin-top: 20px;
+  text-align: center;
+} */
+.form-container
+{
+
+  width: 100%;
+  height: 1000%;
+  padding: 115px;
+  margin-bottom: 160px;
+  /* background-image: url('https://wallpaper.dog/large/20546973.jpg');
+  background-size: 90%; */
+  display: flex;
+  justify-content: center;
+  background-position-x: center;
+
+
+
+
 
 
 }
-.signup{
-  width: 650px;
+.title
+{
+  text-align: center;
+  font-size: 35px;
+  font-weight: 600;
+  color: aqua;
 }

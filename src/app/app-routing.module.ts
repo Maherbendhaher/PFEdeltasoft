@@ -6,7 +6,9 @@ import { AddDevisComponent } from 'src/add-devis/add-devis.component';
 
 import { ClientComponent } from 'src/client/client.component';
 import { DetailsComponent } from 'src/details/details.component';
+import { FooterComponent } from 'src/footer/footer.component';
 import { HomeComponent } from 'src/home/home.component';
+import { InscriptionComponent } from 'src/inscription/inscription.component';
 import { ListeDemandeDevisComponent } from 'src/liste-demande-devis/liste-demande-devis.component';
 import { ListeUserComponent } from 'src/liste-user/liste-user.component';
 import { ProductsComponent } from 'src/products/products.component';
@@ -27,8 +29,9 @@ const routes: Routes = [
   {path:'addDevis',canActivate: [AdminAuthGuardService], component:AddDevisComponent},
   {path:'Profile', component:ProfileComponent},
   {path:'StockVIN',canActivate: [AdminAuthGuardService], component:StockVinComponent},
-  {path:'details',component:DetailsComponent}
-
+  {path:'details',component:DetailsComponent},
+{path:'Footer',component:FooterComponent},
+{path:'Inscrit',component:InscriptionComponent}
 ];
 
 @NgModule({

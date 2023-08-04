@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+<app-navbar></app-navbar>
+<div class="for">
+  <div class="text">inscription</div>
+
+  <div class="form-container">
+
+    <form
+      class="row"
+      *ngIf="!isSuccessful"
+      name="form"
+      (ngSubmit)="f.form.valid && onSubmit()"
+      #f="ngForm"
+      novalidate
+    >
+
+      <div class="col-md-6">
+        <label class="form-label" for="nom">Nom</label>
+
+        <input
+        type="text"
+        class="form-control"
+        name="nom"
+        [(ngModel)]="form.nom"
+        required
+        minlength="3"
+        maxlength="20"
+        #nom="ngModel"
+        />
+        <div class="alert-danger" *ngIf="nom.errors && f.submitted">
+          <div *ngIf="nom.errors['required']">Nom is required</div>
+          <div *ngIf="nom.errors['minlength']">
+            nom must be at least 3 characters
+          </div>
+          <div *ngIf="nom.errors['maxlength']">
+            nom must be at most 20 characters
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="prenom">Prenom</label>
+        <input
+        type="text"
+        class="form-control"
+        name="prenom"
+        [(ngModel)]="form.prenom"
+        required
+        minlength="3"
+        maxlength="20"
+        #prenom="ngModel"
+        />
+        <div class="alert-danger" *ngIf="prenom.errors && f.submitted">
+          <div *ngIf="prenom.errors['required']">Prenom is required</div>
+          <div *ngIf="prenom.errors['minlength']">
+            prenom must be at least 3 characters
+          </div>
+          <div *ngIf="prenom.errors['maxlength']">
+            nom must be at most 20 characters
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="numero">numero</label>
+        <input
+        type="text"
+        class="form-control"
+        name="numero"
+        [(ngModel)]="form.numero"
+        required
+        minlength="3"
+        maxlength="20"
+        #numero="ngModel"
+        />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="email">email</label>
+        <input
+        type="email"
+        class="form-control"
+        name="email"
+        [(ngModel)]="form.email"
+        required
+        email
+        #email="ngModel"
+        />
+        <div class="alert-danger" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors['required']">email is required</div>
+          <div *ngIf="email.errors['email']">
+            email must be a valid mail address
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label"for=" adresse"> adresse</label>
+        <input
+        type="text"
+        class="form-control"
+        name=" adresse"
+        [(ngModel)]="form.adresse"
+        required
+        minlength="3"
+        maxlength="20"
+        #adresse="ngModel"
+        />
+        <div class="alert-danger" *ngIf="adresse.errors && f.submitted">
+          <div *ngIf="adresse.errors['required']">adresse is required</div>
+          <div *ngIf="adresse.errors['minlength']">
+            adresse must be at least 3 characters
+          </div>
+          <div *ngIf="adresse.errors['maxlength']">
+            adresse must be at most 20 characters
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label"for=" gouvernorat"> gouvernorat</label>
+        <input
+        type="text"
+        class="form-control"
+        name="gouvernorat"
+        [(ngModel)]="form.gouvernorat"
+        required
+        minlength="3"
+        maxlength="20"
+        #gouvernorat="ngModel"
+        />
+        <div class="alert-danger" *ngIf="gouvernorat.errors && f.submitted">
+          <div *ngIf="gouvernorat.errors['required']">
+            gouvernorat is required
+          </div>
+          <div *ngIf="gouvernorat.errors['minlength']">
+            gouvernorat must be at least 3 characters
+          </div>
+          <div *ngIf="gouvernorat.errors['maxlength']">
+            gouvernorat must be at most 20 characters
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label" for="password">Password</label>
+        <input
+        type="password"
+        class="form-control"
+        name="password"
+        [(ngModel)]="form.password"
+        required
+        minlength="6"
+        #password="ngModel"
+        />
+        <div class="alert-danger" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors?.['required']">
+            Password is required
+          </div>
+          <div *ngIf="password.errors?.['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="form-row submit-btn">
+        <div class="input-data">
+          <div class="inner"></div>
+          <input type="submit" value="s'inscrire" />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

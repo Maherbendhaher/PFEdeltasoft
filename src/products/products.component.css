@@ -308,6 +308,7 @@ h2{
 }
 
 .continue-application {
+  position:static;
 
   font-size: 13px;
   --color: #fff;
@@ -343,7 +344,7 @@ h2{
       left: 0;
       bottom: 0;
       width: 53px;
-      position: static;
+      position: absolute;
       overflow: hidden;
       border-radius: 5px 0 0 5px;
       background: var(--background-left);

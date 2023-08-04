@@ -19,6 +19,8 @@ h2{
 .table-wrapper{
   margin: 10px 70px 70px;
   box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+  margin-bottom: 120px;
+  padding: 30px;
 }
 
 .fl-table {
@@ -28,9 +30,8 @@ h2{
   border: none;
   border-collapse: collapse;
   width: 100%;
-  max-width: 100%;
   white-space: nowrap;
-  background-color: white;
+  background-color: rgb(166, 206, 234);
 }
 
 .fl-table td, .fl-table th {
